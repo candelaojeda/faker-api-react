@@ -15,9 +15,6 @@ export default class Books extends Component {
     return (
       <div>
         <h1>Books here!</h1>
-        {this.state.books.map((book) => {
-          return <div key={book.id}></div>;
-        })}
       </div>
     );
   }
