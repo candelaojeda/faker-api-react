@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import React, { Component } from "react";
 import Books from "./components/Books";
-import library from "./examples/library.json";
 
 class App extends Component() {
   render() {
