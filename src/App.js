@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import React, { Component } from "react";
 import Books from "./components/Books";
 
-class App extends Component() {
+class App extends Component {
   render() {
     return (
       <div>
@@ -14,7 +14,11 @@ class App extends Component() {
             exact
             path="/"
             render={() => {
-              return <div></div>;
+              return (
+                <div>
+                  <Books />
+                </div>
+              );
             }}
           ></Route>
           <Route path="/books" component={Books} />
