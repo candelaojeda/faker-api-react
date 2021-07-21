@@ -6,7 +6,7 @@ thead {
   background: rgb(55, 56, 99);
 }
 th {
-  margin: 0;
+  display: flexbox;
   border-radius: 4px;
   padding: 5px;
   color: rgb(255, 255, 255);
@@ -15,12 +15,9 @@ th {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-tr{
-    padding: 8px;
-}
-td{
-    background: rgb(172, 205, 248);
-    text-align: center;
-    font-size: 15px;
-    width: 60%;
+td {
+  background: rgb(172, 205, 248);
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
 }

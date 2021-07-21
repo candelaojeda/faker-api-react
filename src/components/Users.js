@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-function Users() {
+export default function Users() {
   let [data, setData] = useState([]);
-  let url = "https://fakerapi.it/api/v1/users?_quantity=10";
+  let url = "https://fakerapi.it/api/v1/users?_quantity=100";
 
   useEffect(
     function () {
@@ -44,8 +44,16 @@ function Users() {
               <td>{user.email}</td>
               <td>{user.ip}</td>
               <td>{user.macAddress}</td>
-              <td>{user.website}</td>
-              <td>{user.image}</td>
+              <td>
+                <a href={user.website} target="_blank" rel="noreferrer">
+                  {user.website}
+                </a>
+              </td>
+              <td>
+                <a href={user.image} target="_blank" rel="noreferrer">
+                  {user.image}
+                </a>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -53,4 +61,3 @@ function Users() {
     </div>
   );
 }
-export default Users;

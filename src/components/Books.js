@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-function Books() {
+export default function Books() {
   let [data, setData] = useState([]);
-  let url = "https://fakerapi.it/api/v1/books?_quantity=10";
+  let url = "https://fakerapi.it/api/v1/books?_quantity=100";
 
   useEffect(
     function () {
@@ -18,7 +18,7 @@ function Books() {
   }
   return (
     <div>
-      <table className="table-book">
+      <table>
         <thead>
           <tr>
             <th>TITLE</th>
@@ -39,7 +39,11 @@ function Books() {
               <td>{book.genre}</td>
               <td>{book.description}</td>
               <td>{book.isbn}</td>
-              <td>{book.image}</td>
+              <td>
+                <a href={book.image} target="_blank" rel="noreferrer">
+                  {book.image}
+                </a>
+              </td>
               <td>{book.published}</td>
               <td>{book.publisher}</td>
             </tr>
@@ -49,4 +53,3 @@ function Books() {
     </div>
   );
 }
-export default Books;
