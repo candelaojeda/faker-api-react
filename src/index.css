@@ -1,1 +1,18 @@
-
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap");
+* {
+  font-family: "STIX Two Math", serif;
+}
+thead {
+  background: rgb(55, 56, 99);
+}
+th {
+  margin: 0;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 8px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
