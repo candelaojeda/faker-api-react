@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function CreditCards() {
   let [data, setData] = useState([]);
-  let url = "https://fakerapi.it/api/v1/credit_cards?_quantity=100";
+  let url = "https://fakerapi.it/api/v1/credit_cards?_quantity=50";
 
   useEffect(
     function () {

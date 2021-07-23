@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./App.css";
-import React, { Component } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Books from "./components/Books";
 import Users from "./components/Users";

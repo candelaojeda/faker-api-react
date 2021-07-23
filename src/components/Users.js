@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Users() {
   let [data, setData] = useState([]);
-  let url = "https://fakerapi.it/api/v1/users?_quantity=100";
+  let url = "https://fakerapi.it/api/v1/users?_quantity=50";
 
   useEffect(
     function () {

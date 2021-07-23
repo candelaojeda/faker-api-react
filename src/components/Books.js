@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 export default function Books() {
   let [data, setData] = useState([]);
-  let url = "https://fakerapi.it/api/v1/books?_quantity=100";
+  let url = "https://fakerapi.it/api/v1/books?_quantity=50";
 
   let [book, setBook] = useState(1);
-  let [amountBookPerPage, setAmountBookPerPage] = useState(10);
+  let [amountBookPerPage, setAmountBookPerPage] = useState(20);
 
   const books = [];
   for (let i = 1; i < Math.ceil(data.length / amountBookPerPage); i++) {
