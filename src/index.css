@@ -21,3 +21,21 @@ td {
   font-size: 15px;
   padding: 5px;
 }
+.ul-pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 8px;
+  justify-content: center;
+  border: 2px solid rgb(55, 56, 99);
+  cursor: pointer;
+  margin: 1.5px;
+  color: rgb(22, 23, 49);
+  font-size: 12px;
+  font-weight: bold;
+}
+li:hover{
+    background: rgb(172, 205, 248);
+}

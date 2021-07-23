@@ -20,10 +20,10 @@ export default function CreditCards() {
       <table>
         <thead>
           <tr>
-            <th>TYPE</th>
-            <th>NUMBER</th>
-            <th>EXPIRATION</th>
-            <th>OWNER</th>
+            <th style={tableHead}>TYPE</th>
+            <th style={tableHead}>NUMBER</th>
+            <th style={tableHead}>EXPIRATION</th>
+            <th style={tableHead}>OWNER</th>
           </tr>
         </thead>
         <tbody>
@@ -40,3 +40,6 @@ export default function CreditCards() {
     </div>
   );
 }
+const tableHead = {
+  width: "365px",
+};

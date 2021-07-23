@@ -4,6 +4,26 @@ export default function Books() {
   let [data, setData] = useState([]);
   let url = "https://fakerapi.it/api/v1/books?_quantity=100";
 
+  let [book, setBook] = useState(1);
+  let [amountBookPerPage, setAmountBookPerPage] = useState(10);
+
+  const books = [];
+  for (let i = 1; i < Math.ceil(data.length / amountBookPerPage); i++) {
+    books.push(i);
+  }
+
+  const indexOfLastBook = book * amountBookPerPage;
+  const indexOfFirstBook = indexOfLastBook - amountBookPerPage;
+  const actuallyItem = data.slice(indexOfFirstBook, indexOfLastBook);
+
+  const pagesNumber = books.map((number) => {
+    return (
+      <li key={number} id={number}>
+        {number}
+      </li>
+    );
+  });
+
   useEffect(
     function () {
       fetch(url)
@@ -50,6 +70,9 @@ export default function Books() {
           ))}
         </tbody>
       </table>
+      <nav className="nav-pagination">
+        <ul className="ul-pagination">{pagesNumber}</ul>
+      </nav>
     </div>
   );
 }
