@@ -29,7 +29,7 @@ export default function App() {
           render={() => {
             return (
               <div>
-                <h1>This is a home!</h1>
+                <h1>WELCOME TO THE PAGE !</h1>
               </div>
             );
           }}

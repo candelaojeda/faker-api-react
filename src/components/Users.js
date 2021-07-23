@@ -3,6 +3,25 @@ import { useEffect, useState } from "react";
 export default function Users() {
   let [data, setData] = useState([]);
   let url = "https://fakerapi.it/api/v1/users?_quantity=50";
+  let [user, setUser] = useState(1);
+  let [amountUserPerPage, setAmountUserPerPage] = useState(10);
+
+  const users = [];
+  for (let i = 1; i < Math.ceil(data.length / amountUserPerPage); i++) {
+    users.push(i);
+  }
+
+  const indexOfLastUser = user * amountUserPerPage;
+  const indexOfFirstUser = indexOfLastUser - amountUserPerPage;
+  const actuallyItem = data.slice(indexOfFirstUser, indexOfLastUser);
+
+  const pagesNumber = users.map((number) => {
+    return (
+      <li key={number} id={number}>
+        {number}
+      </li>
+    );
+  });
 
   useEffect(
     function () {
@@ -58,6 +77,9 @@ export default function Users() {
           ))}
         </tbody>
       </table>
+      <nav className="nav-pagination">
+        <ul className="ul-pagination">{pagesNumber}</ul>
+      </nav>
     </div>
   );
 }

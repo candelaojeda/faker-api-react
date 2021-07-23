@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 export default function Books() {
   let [data, setData] = useState([]);
   let url = "https://fakerapi.it/api/v1/books?_quantity=50";
-
   let [book, setBook] = useState(1);
-  let [amountBookPerPage, setAmountBookPerPage] = useState(20);
+  let [amountBookPerPage, setAmountBookPerPage] = useState(10);
 
   const books = [];
   for (let i = 1; i < Math.ceil(data.length / amountBookPerPage); i++) {
@@ -14,7 +13,7 @@ export default function Books() {
 
   const indexOfLastBook = book * amountBookPerPage;
   const indexOfFirstBook = indexOfLastBook - amountBookPerPage;
-  const actuallyItem = data.slice(indexOfFirstBook, indexOfLastBook);
+  const actuallyItem = books.slice(indexOfFirstBook, indexOfLastBook);
 
   const pagesNumber = books.map((number) => {
     return (

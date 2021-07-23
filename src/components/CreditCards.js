@@ -3,6 +3,29 @@ import { useState, useEffect } from "react";
 export default function CreditCards() {
   let [data, setData] = useState([]);
   let url = "https://fakerapi.it/api/v1/credit_cards?_quantity=50";
+  let [creditCard, setCreditCards] = useState(1);
+  let [amountCreditCardsPerPage, setAmountCreditCradsPerPage] = useState(10);
+
+  const creditsCards = [];
+  for (let i = 1; i < Math.ceil(data.length / amountCreditCardsPerPage); i++) {
+    creditsCards.push(i);
+  }
+
+  const indexOfLastCreditCard = creditCard * amountCreditCardsPerPage;
+  const indexOfFirstCreditCard =
+    indexOfLastCreditCard - amountCreditCardsPerPage;
+  const actuallyItem = data.slice(
+    indexOfFirstCreditCard,
+    indexOfLastCreditCard
+  );
+
+  const pagesNumber = creditsCards.map((number) => {
+    return (
+      <li key={number} id={number}>
+        {number}
+      </li>
+    );
+  });
 
   useEffect(
     function () {
@@ -37,6 +60,9 @@ export default function CreditCards() {
           ))}
         </tbody>
       </table>
+      <nav className="nav-pagination">
+        <ul className="ul-pagination">{pagesNumber}</ul>
+      </nav>
     </div>
   );
 }
